@@ -8,6 +8,7 @@ def init_package_system_dict():
     package_system_dict["cardATMC"] = "自助终端"
     package_system_dict["gbatch"] = "智能社区"
     package_system_dict["card_POSPconsole"] = "智能社区"
+    package_system_dict["posp"] = "智能社区"
     package_system_dict["cardFKJ"] = "发卡机"
     package_system_dict["cardVTM"] = "智能银行"
     package_system_dict["suncard"] = "贷记卡系统"
@@ -18,12 +19,18 @@ def init_package_system_dict():
     package_system_dict["DRCB_PB"] = "柜面系统"
     package_system_dict["GMXT"] = "柜面系统"
     package_system_dict["CardICP"] = "IC卡核心"
+    package_system_dict["Card_ICP"] = "IC卡核心"
     package_system_dict["CardICBP"] = "IC卡批处理"
     package_system_dict["ICDP"] = "IC卡数据准备系统"
     package_system_dict["AMC"] = "IC卡金融管理平台"
     package_system_dict["tsp"] = "IC卡受理方"
     package_system_dict["cardfrs"] = "卡前置"
     package_system_dict["AS400"] = "综合业务系统"
+    package_system_dict["cnaps2"] = "二代支付系统"
+    package_system_dict["ibps"] = "网银互联"
+    package_system_dict["RCMIS"] = "信贷系统"
+    package_system_dict["SmartHall"] = "智能厅堂"
+    package_system_dict["CCR"] = "新数据仓库"
     return package_system_dict
 
 class package2system:
