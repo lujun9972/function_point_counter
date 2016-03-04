@@ -1,3 +1,6 @@
+#! python
+# -*- coding: utf-8 -*-
+
 import package2system
 
 class system_counter():
