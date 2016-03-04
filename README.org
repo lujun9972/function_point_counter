@@ -1,0 +1,26 @@
+#+TITLE: README
+#+AUTHOR: DarkSun
+#+CATEGORY: package2system
+#+DATE: [2016-03-04 周五 16:00]
+#+OPTIONS: ^:{}
+使用方法: python function_point_counter.py excel文件 sheet表名
+
+其中excel文件中sheet的格式必须保证:
++ 第一列为包所涉及的功能点,若一个包涉及到多个功能点变更,各功能点之间用空格或者回车分隔
++ 第二列为包名
+
+该脚本会列出上线的系统及其变更的功能点
+#+BEGIN_EXAMPLE
+  $ python ./function_point_counter.py sample.xlsx 2016-02-17
+  智能社区 1
+  智能厅堂 1
+  信贷系统 6
+  新数据仓库 1
+  柜面系统 5
+  IC卡核心 1
+  ESB 1
+  综合业务系统 4
+#+END_EXAMPLE
+
+若发现上线的系统中出现None,则表示有无法识别的包前缀,需要增加package2system.cfg中的包前缀与系统的对应关系
+
