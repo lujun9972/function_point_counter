@@ -7,7 +7,7 @@ def init_package_system_dict():
     package_system_dict["GJS"] = "贵金属"
     package_system_dict["cardATMC"] = "自助终端"
     package_system_dict["gbatch"] = "智能社区"
-    package_system_dict["card_POSPconsole"] = "智能社区"
+    package_system_dict["card_POSPConsole"] = "智能社区"
     package_system_dict["posp"] = "智能社区"
     package_system_dict["cardFKJ"] = "发卡机"
     package_system_dict["cardVTM"] = "智能银行"
@@ -31,6 +31,8 @@ def init_package_system_dict():
     package_system_dict["RCMIS"] = "信贷系统"
     package_system_dict["SmartHall"] = "智能厅堂"
     package_system_dict["CCR"] = "新数据仓库"
+    package_system_dict["gjyw"] = "国际业务系统"
+    package_system_dict["HXYH"] = "核心优化项目"
     return package_system_dict
 
 class package2system:
@@ -40,7 +42,7 @@ class package2system:
 
     def get_system(self,package):
         for package_prefix,system in self._dict.items():
-            if package.startswith(package_prefix):
+            if package.upper().startswith(package_prefix.upper()):
                 return system
         return None
 
