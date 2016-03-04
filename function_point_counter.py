@@ -1,3 +1,6 @@
+#! python
+# -*- coding: utf-8 -*-
+
 import sys
 import xlrd
 import package2system
@@ -12,8 +15,11 @@ def open_excel(excel_file="/cygdrive/c/tmp/shangxian_condition.xlsx"):
 
 def open_sheet(excel_file,sheet_name):
     '''打开EXCEL_FILE并找到名为SHEET_NAME的表格'''
-    data = open_excel(excel_file)
-    return data.sheet_by_name(sheet_name)
+    try:
+        data = open_excel(excel_file)
+        return data.sheet_by_name(sheet_name)
+    except Exception,e:
+        print str(e)
 
 def count_function_points_from_sheets(excel_file,*sheet_names):
     '''统计EXCEL_FILE中SHEET_NAMES中的各系统及其功能变更个数'''
@@ -34,3 +40,12 @@ def count_function_points_from_sheets(excel_file,*sheet_names):
 
     for system,function_points in function_points_map.items():
         print system,len(set(function_points))
+
+if __name__ == "__main__":
+    if len(sys.argv) <3 :
+        script = sys.argv[0]
+        print "Usage: %s excel_file sheet_names..." % script
+    else:
+        excel_file = sys.argv[1]
+        sheet_names = sys.argv[2:]
+        count_function_points_from_sheets(excel_file,*sheet_names)
